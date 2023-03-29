@@ -1,0 +1,380 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+  /* outline: 1px solid red; */
+}
+:root {
+  --light-blue: #b8d8d8ff;
+  --cadet-gray: #7a9e9fff;
+  --paynes-gray: #4f6367ff;
+  --beige: #eef5dbff;
+  --bittersweet: #fe5f55ff;
+}
+html {
+  scroll-padding-top: 40px;
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+}
+nav {
+  z-index: 100;
+  position: fixed;
+  top: 2rem;
+  width: 100%;
+  background-color: white;
+  transition: top 250ms;
+}
+nav .menu {
+  margin: 0 auto;
+  max-width: 1280px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.1em 2em;
+}
+nav .menu > a {
+  text-decoration: none;
+  color: var(--paynes-gray);
+  font-size: 2em;
+}
+nav .menu > ul {
+  list-style: none;
+  display: flex;
+  gap: 2.5em;
+}
+nav .menu > ul li {
+  color: var(--cadet-gray);
+}
+nav .menu > ul li a {
+  text-decoration: none;
+  color: var(--cadet-gray);
+  transition: 300ms;
+}
+nav .menu > ul li a.active {
+  color: var(--bittersweet);
+}
+.dropdown {
+  position: relative;
+  display: block;
+}
+.dropdown > ul {
+  list-style: none;
+  left: -2em;
+  position: absolute;
+  top: calc(100% + 0.1em);
+  background-color: white;
+  padding: 1.8em 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1em;
+  opacity: 0;
+  pointer-events: none;
+  border-radius: 0.5em;
+  transform: translateY(-10px);
+  transition: 300ms;
+}
+.dropdown > ul li {
+  min-width: 90px;
+}
+.dropdown > ul li a:hover {
+  color: var(--bittersweet);
+}
+.dropdown:hover > ul {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
+
+.dropdown:hover > a {
+  color: var(--bittersweet);
+}
+
+header {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-image: linear-gradient(
+    160deg,
+    var(--paynes-gray),
+    var(--light-blue)
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .title {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap-reverse;
+  gap: 2em;
+  margin-top: 180px;
+  margin-bottom: 180px;
+}
+header .title > h1 {
+  flex: 1;
+  color: white;
+  font-size: 3em;
+  text-transform: uppercase;
+}
+header .title > img {
+  width: 40vw;
+}
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.wave svg {
+  position: relative;
+  display: block;
+  width: calc(112% + 1.3px);
+  height: 180px;
+  transform: rotateY(180deg);
+}
+
+.wave .shape-fill {
+  fill: #ffffff;
+}
+section {
+  position: relative;
+  width: 100%;
+  min-height: 50vh;
+  padding: 3em 2em;
+}
+#ch1 {
+  background-color: white;
+}
+.content {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3em;
+  padding: 1.5em 2em;
+}
+.content .chapter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+.content .chapter > h1 {
+  color: var(--bittersweet);
+  font-size: 3em;
+}
+.content .chapter > h2 {
+  position: relative;
+  color: var(--cadet-gray);
+  font-size: 2em;
+}
+.content .chapter > h2::before {
+  position: absolute;
+  content: "";
+  left: -0.4em;
+  height: 100%;
+  width: 0.1em;
+  background-color: var(--bittersweet);
+}
+.content > p {
+  text-indent: 1.5em;
+  color: var(--paynes-gray);
+  line-height: 1.8;
+  font-size: 1.2em;
+}
+.content > p span {
+  color: var(--bittersweet);
+}
+.content > p a {
+  color: var(--bittersweet);
+}
+#ch2 {
+  background-image: linear-gradient(
+    160deg,
+    var(--paynes-gray),
+    var(--light-blue)
+  );
+}
+
+.top-wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.top-wave svg {
+  position: relative;
+  display: block;
+  width: calc(115% + 1.3px);
+  height: 140px;
+  transform: rotateY(180deg);
+}
+
+.top-wave .shape-fill {
+  fill: #ffffff;
+}
+
+#ch2 .content {
+  margin-top: 127px;
+  margin-bottom: 138px;
+}
+#ch2 .content .chapter > h1,
+#ch6 .content .chapter > h1 {
+  color: var(--bittersweet);
+  font-size: 3em;
+}
+#ch2 .content .chapter > h2,
+#ch6 .content .chapter > h2 {
+  position: relative;
+  color: white;
+  font-size: 2em;
+}
+
+.content .chapter > h3 {
+  color: var(--paynes-gray);
+  background-image: linear-gradient(130deg, var(--light-blue), var(--beige));
+  background-position: 0% 100%;
+  background-size: 200%;
+  padding: 1em 1.8em;
+  border-radius: 2em;
+}
+#ch2 .content > p,
+#ch6 .content > p {
+  text-indent: 1.5em;
+  color: var(--beige);
+  line-height: 1.8;
+  font-size: 1.2em;
+  border-radius: 1em;
+}
+#ch2 .content > p span,
+#ch6 .content > p span {
+  color: var(--bittersweet);
+}
+.content > p .underlined {
+  text-decoration: underline;
+}
+.bottom-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.bottom-wave svg {
+  position: relative;
+  display: block;
+  width: calc(157% + 1.3px);
+  height: 138px;
+}
+
+.bottom-wave .shape-fill {
+  fill: #fe5f55;
+}
+#ch3 {
+  background-color: var(--bittersweet);
+  padding-bottom: 1.5em;
+}
+#ch3 .content,
+#ch4 .content {
+  background-color: rgba(255, 255, 255, 0.068);
+  border-radius: 2em;
+}
+#ch3 .content .chapter > h1,
+#ch4 .content .chapter > h1 {
+  color: var(--cadet-gray);
+  font-size: 3em;
+}
+#ch3 .content .chapter > h2,
+#ch4 .content .chapter > h2 {
+  position: relative;
+  color: var(--beige);
+  font-size: 2em;
+}
+#ch3 .content .chapter > h2::before,
+#ch4 .content .chapter > h2::before {
+  background-color: var(--cadet-gray);
+}
+#ch3 .content > p,
+#ch4 .content > p {
+  color: white;
+}
+#ch3 .content > p span,
+#ch4 .content > p span {
+  color: var(--cadet-gray);
+}
+
+#ch4 {
+  background-color: var(--bittersweet);
+  padding-top: 1.5em;
+}
+.top-wave2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.top-wave2 svg {
+  position: relative;
+  display: block;
+  width: calc(155% + 1.3px);
+  height: 171px;
+}
+
+.top-wave2 .shape-fill {
+  fill: #fe5f55;
+}
+#ch5 {
+  background-color: white;
+}
+#ch5 .content {
+  margin-top: 171px;
+}
+#ch6 {
+  background-image: linear-gradient(
+    160deg,
+    var(--paynes-gray),
+    var(--light-blue)
+  );
+}
+.bottom-wave2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.bottom-wave2 svg {
+  position: relative;
+  display: block;
+  width: calc(176% + 1.3px);
+  height: 152px;
+}
+
+.bottom-wave2 .shape-fill {
+  fill: #ffffff;
+}
+#ch6 .content {
+  margin-top: 152px;
+}
